@@ -1,4 +1,5 @@
 import "../styles/Header.css";
+import { Link } from "react-router-dom";
 import Logo from "../data/images/logo.jpeg";
 
 function Header({ cartTotalNumber }) {
@@ -22,9 +23,12 @@ function HeaderShow({ logo }) {
 function NavBar({ cartTotalNumber }) {
   return (
     <nav className="navbar">
-      <li>Home</li>
+      <Link to="/">Home</Link>
+      <Link to="shop">Shop</Link>
+      <Link to="cart">Cart ({cartTotalNumber})</Link>
+      {/* <li>Home</li>
       <li>Shop</li>
-      <li>Cart ({cartTotalNumber})</li>
+      <li>Cart ({cartTotalNumber})</li> */}
     </nav>
   );
 };

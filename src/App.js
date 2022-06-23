@@ -1,4 +1,5 @@
 import "./styles/App.css";
+import { Routes, Route, Outlet } from "react-router-dom";
 import Header from "./components/Header";
 import { useState } from "react";
 import HomePage from "./components/HomePage";
@@ -16,8 +17,9 @@ function App() {
   return (
     <div className="App">
       <Header cartTotalNumber={cartItems.length} />
+      <Outlet />
       {/* <HomePage /> */}
-      <ShopPage products={PRODUCTS} />
+      {/* <ShopPage products={PRODUCTS} /> */}
     </div>
   );
 }

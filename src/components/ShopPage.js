@@ -1,8 +1,8 @@
 import "../styles/ShopPage.css";
 import { useState } from "react";
+import { Link, Outlet, useParams } from "react-router-dom";
 
 function ShopPage({ products }) {
-
   const getCategoryList = (products) => {
     const categoryList = ["Shop All"];
     products.forEach((product) => {
@@ -28,10 +28,11 @@ function ShopPage({ products }) {
         currentCategory={category}
         onChangeCategory={onChangeCategory}
       />
-      <ShopCategoryMain
+      {/* <ShopCategoryMain
         category={category}
         products={products}
-      />
+      /> */}
+      <Outlet />
     </div>
   );
 };
@@ -41,27 +42,35 @@ function ShopCategorySideNav({ categoryList, currentCategory, onChangeCategory }
     <nav className="shop-category-sidenav">
       {categoryList.map((category) => {
         return (
-          <li key={category}>
-            <button 
-              onClick={onChangeCategory}
-              id={category}
-              className={category === currentCategory
-                ?
-                "shop-category-sidenav-button selected"
-                :
-                "shop-category-sidenav-button"
-              }
-            >
-              {category}
-            </button>
-          </li>
+          // <li key={category}>
+          //   <button 
+          //     onClick={onChangeCategory}
+          //     id={category}
+          //     className={category === currentCategory
+          //       ?
+          //       "shop-category-sidenav-button selected"
+          //       :
+          //       "shop-category-sidenav-button"
+          //     }
+          //   >
+          //     {category}
+          //   </button>
+          // </li>
+          <Link
+            to={category}
+            key={category}
+          >
+            {category}
+          </Link>
         );
       })}
     </nav>
   );
 };
 
-function ShopCategoryMain({ category, products }) {
+function ShopCategoryMain({ products }) {
+  let params = useParams();
+
   const getItemList = (category, products) => {
     if (category === "Shop All") {
       return products;
@@ -70,11 +79,13 @@ function ShopCategoryMain({ category, products }) {
     };
   };
 
-  const itemList = getItemList(category, products);
+  // const itemList = getItemList(category, products);
+  // console.log(params.category);
+  const itemList = getItemList(params.category, products);
 
   return (
     <div className="shop-category-main">
-      <ShopCategoryHeader category={category} />
+      <ShopCategoryHeader category={params.category} />
       <ShopItemGrid itemList={itemList} />
     </div>
   );
@@ -121,4 +132,4 @@ function ShopItemCard({ item, onClickItemCard }) {
   )
 }
 
-export default ShopPage;
+export { ShopPage, ShopCategoryMain };

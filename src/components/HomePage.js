@@ -1,5 +1,6 @@
 import "../styles/HomePage.css";
 import HomeBannerImage from "../data/images/banner.jpeg";
+import { Link } from "react-router-dom";
 
 function HomePage() {
   return (
@@ -22,9 +23,12 @@ function HomeBanner({ image }) {
 
 function HomeShopButton() {
   return (
-    <button className="home-shop-button">
+    // <button className="home-shop-button">
+    //   Shop Now
+    // </button>
+    <Link to='shop' className="home-shop-button">
       Shop Now
-    </button>
+    </Link>
   );
 };
 
