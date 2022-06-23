@@ -1,0 +1,32 @@
+.home-page {
+  position: relative;
+  width: 100%;
+}
+
+.home-banner-image {
+  width: 100%;
+  height: auto;
+}
+
+.home-shop-button {
+  width: 20%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-family: inherit;
+  font-size: 1.5rem;
+  /* font-weight: bold; */
+  padding: .5rem 1.5rem;
+  border: none;
+  color: black;
+  background-color: white;
+  cursor: pointer;
+  margin-left: -10%;
+}
+
+.home-shop-button:hover,
+.home-shop-button:focus {
+  /* outline: 2px dashed white; */
+  background-color: black;
+  color: white;
+}

@@ -1,0 +1,61 @@
+.shop-page {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  margin-top: 30px;
+}
+
+.shop-category-sidenav {
+  margin-top: 20px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.shop-category-sidenav-button {
+  font-family: inherit;
+  font-size: 1rem;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+}
+
+.shop-category-sidenav-button.selected {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.shop-category-main {
+  margin-top: 10px;
+}
+
+.shop-category-header {
+  /* font-style: italic; */
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+.shop-item-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+}
+
+.shop-item-card {
+  width: 100%;
+  cursor: pointer;
+}
+
+.shop-item-card-image {
+  width: 100%;
+}
+
+.shop-item-card-name {
+  width: 100%;
+  /* font-weight: bold; */
+}
+
+.shop-item-card-price {
+  /* font-weight: bold; */
+}
