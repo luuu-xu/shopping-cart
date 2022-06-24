@@ -49,7 +49,7 @@
 .add-to-cart-main {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
 }
 
 .add-to-cart-button {
@@ -60,7 +60,7 @@
   font-weight: bold;
   background-color: white;
   color: black;
-  padding: 1.2rem;
+  padding: .8rem;
   border: 2px solid black;
 }
 
@@ -100,7 +100,7 @@
   font-family: inherit;
   font-size: 16px;
   font-weight: bold;
-  width: 30px;
+  width: 40px;
   height: 30px;
   padding: 0;
   border: none;

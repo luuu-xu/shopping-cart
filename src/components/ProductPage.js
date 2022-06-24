@@ -63,10 +63,10 @@ function AddToCartMain({ product }) {
   const [number, setNumber] = useState(1);
 
   const onChange = (e) => {
-    if (e.target.value < 0) {
+    if (Number(e.target.value) < 0) {
       setNumber(1);
     } else {
-      setNumber(e.target.value);
+      setNumber(Number(e.target.value));
     };
   };
 

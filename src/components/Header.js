@@ -2,7 +2,11 @@ import "../styles/Header.css";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../data/images/logo.jpeg";
 
-function Header({ cartTotalNumber }) {
+function Header({ cartItems }) {
+  const cartTotalNumber = cartItems.reduce((previous, current) => {
+    return previous + current.number}, 0
+  );
+
   return (
     <div className="header">
       <HeaderShow logo={Logo}/>
@@ -31,10 +35,7 @@ function NavBar({ cartTotalNumber }) {
     <nav className="navbar">
       <Link to="/">Home</Link>
       <Link to="shop">Shop</Link>
-      <Link to="cart">Cart ({cartTotalNumber})</Link>
-      {/* <li>Home</li>
-      <li>Shop</li>
-      <li>Cart ({cartTotalNumber})</li> */}
+      <Link to="cart">Cart({cartTotalNumber})</Link>
     </nav>
   );
 };

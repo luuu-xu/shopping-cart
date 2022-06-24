@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ShopPage, ShopCategoryMain } from './components/ShopPage';
 import HomePage from './components/HomePage';
 import ProductPage from './components/ProductPage';
+import CartPage from './components/CartPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,7 +21,7 @@ root.render(
           <Route path='product' element={<ProductPage />}>
             <Route path=':productId' element={<ProductPage />} />
           </Route>
-          {/* <Route path='cart' element={} /> */}
+          <Route path='cart' element={<CartPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
