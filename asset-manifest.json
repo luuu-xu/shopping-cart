@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/shopping-cart/static/css/main.b2a312e6.css",
+    "main.js": "/shopping-cart/static/js/main.1d496a1b.js",
+    "static/media/IMG_8346.jpeg": "/shopping-cart/static/media/IMG_8346.ee5ab5f9a8534164a7f9.jpeg",
+    "static/media/IMG_1498.jpeg": "/shopping-cart/static/media/IMG_1498.54b203e974135c40f239.jpeg",
+    "static/media/IMG_2944.jpeg": "/shopping-cart/static/media/IMG_2944.6dc1bc3d68afbfe32a4a.jpeg",
+    "static/media/IMG_7995.jpeg": "/shopping-cart/static/media/IMG_7995.4ad7987bcde1b585fe42.jpeg",
+    "static/media/IMG_7400.jpeg": "/shopping-cart/static/media/IMG_7400.8d370905824fb41720ee.jpeg",
+    "static/media/IMG_0946.jpeg": "/shopping-cart/static/media/IMG_0946.685a4ae35738ee8ea8e1.jpeg",
+    "static/media/IMG_0001.jpeg": "/shopping-cart/static/media/IMG_0001.3afa66af14c1c9cea34e.jpeg",
+    "static/media/IMG_2584.jpeg": "/shopping-cart/static/media/IMG_2584.19a22e6544c6bb23bff2.jpeg",
+    "static/media/IMG_1618.jpeg": "/shopping-cart/static/media/IMG_1618.b4b7b857a1bce896af85.jpeg",
+    "static/media/IMG_0985.jpeg": "/shopping-cart/static/media/IMG_0985.d7c71723853209bf51fe.jpeg",
+    "static/media/IMG_8001.jpeg": "/shopping-cart/static/media/IMG_8001.75385b1d404edcc52817.jpeg",
+    "static/media/IMG_1798.jpeg": "/shopping-cart/static/media/IMG_1798.6ce8f625c0539ff4d6c4.jpeg",
+    "static/media/banner.jpeg": "/shopping-cart/static/media/banner.2eff524d35c865c0815e.jpeg",
+    "static/media/IMG_1641.jpeg": "/shopping-cart/static/media/IMG_1641.e8b3693c6a277ef239e8.jpeg",
+    "static/media/IMG_1766.jpeg": "/shopping-cart/static/media/IMG_1766.8a59a285bdb9baac6c66.jpeg",
+    "static/media/IMG_0537.jpeg": "/shopping-cart/static/media/IMG_0537.31ccdbfacd06b231eebd.jpeg",
+    "static/media/IMG_0059.jpeg": "/shopping-cart/static/media/IMG_0059.5a6696010a0c79e0b3b0.jpeg",
+    "static/media/logo.jpeg": "/shopping-cart/static/media/logo.8f91e95034dfcadda33f.jpeg",
+    "index.html": "/shopping-cart/index.html",
+    "main.b2a312e6.css.map": "/shopping-cart/static/css/main.b2a312e6.css.map",
+    "main.1d496a1b.js.map": "/shopping-cart/static/js/main.1d496a1b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b2a312e6.css",
+    "static/js/main.1d496a1b.js"
+  ]
+}
