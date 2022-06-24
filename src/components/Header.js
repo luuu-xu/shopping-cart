@@ -1,5 +1,5 @@
 import "../styles/Header.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "../data/images/logo.jpeg";
 
 function Header({ cartTotalNumber }) {
@@ -12,8 +12,14 @@ function Header({ cartTotalNumber }) {
 };
 
 function HeaderShow({ logo }) {
+  let navigate = useNavigate();
+
+  const onClickHeaderShow = () => {
+    navigate('/');
+  };
+
   return (
-    <div className="header-show">
+    <div className="header-show" onClick={onClickHeaderShow}>
       <img src={logo} alt="logo" className="header-logo" />
       <h1 className="header-h1">xu leathers</h1>
     </div>

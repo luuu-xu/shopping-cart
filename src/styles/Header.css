@@ -9,6 +9,7 @@
 .header-show {
   display: flex;
   gap: 2rem;
+  cursor: pointer;
 }
 
 .header-logo {

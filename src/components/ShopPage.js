@@ -1,8 +1,9 @@
 import "../styles/ShopPage.css";
 import { useState } from "react";
-import { Link, Outlet, useParams } from "react-router-dom";
+import { Outlet, useNavigate, useParams } from "react-router-dom";
+import PRODUCTS from '../data/PRODUCTS';
 
-function ShopPage({ products }) {
+function ShopPage() {
   const getCategoryList = (products) => {
     const categoryList = ["Shop All"];
     products.forEach((product) => {
@@ -12,13 +13,14 @@ function ShopPage({ products }) {
     });
     return categoryList;
   };
-
-  const categoryList = getCategoryList(products);
-
+  const categoryList = getCategoryList(PRODUCTS);
   const [category, setCategory] = useState("Shop All");
+
+  let navigate = useNavigate();
 
   const onChangeCategory = (e) => {
     setCategory(e.target.id);
+    navigate(`/shop/${e.target.id}`);
   };
 
   return (
@@ -42,34 +44,42 @@ function ShopCategorySideNav({ categoryList, currentCategory, onChangeCategory }
     <nav className="shop-category-sidenav">
       {categoryList.map((category) => {
         return (
-          // <li key={category}>
-          //   <button 
-          //     onClick={onChangeCategory}
-          //     id={category}
-          //     className={category === currentCategory
-          //       ?
-          //       "shop-category-sidenav-button selected"
-          //       :
-          //       "shop-category-sidenav-button"
+          <li key={category}>
+            <button 
+              onClick={onChangeCategory}
+              id={category}
+              className={category === currentCategory
+                ?
+                "shop-category-sidenav-button selected"
+                :
+                "shop-category-sidenav-button"
+              }
+            >
+              {category}
+            </button>
+          </li>
+          // <Link
+          //   to={category}
+          //   key={category}
+          //   className=
+          //     {category === currentCategory
+          //     ?
+          //     "shop-category-sidenav-button selected"
+          //     :
+          //     "shop-category-sidenav-button"
           //     }
-          //   >
-          //     {category}
-          //   </button>
-          // </li>
-          <Link
-            to={category}
-            key={category}
-          >
-            {category}
-          </Link>
+          // >
+          //   {category}
+          // </Link>
         );
       })}
     </nav>
   );
 };
 
-function ShopCategoryMain({ products }) {
+function ShopCategoryMain({ category }) {
   let params = useParams();
+  const currentCategory = category || params.category;
 
   const getItemList = (category, products) => {
     if (category === "Shop All") {
@@ -78,14 +88,11 @@ function ShopCategoryMain({ products }) {
       return products.filter((product) => product.category === category);
     };
   };
-
-  // const itemList = getItemList(category, products);
-  // console.log(params.category);
-  const itemList = getItemList(params.category, products);
+  const itemList = getItemList(currentCategory, PRODUCTS);
 
   return (
     <div className="shop-category-main">
-      <ShopCategoryHeader category={params.category} />
+      <ShopCategoryHeader category={currentCategory} />
       <ShopItemGrid itemList={itemList} />
     </div>
   );
@@ -98,9 +105,12 @@ function ShopCategoryHeader({ category }) {
 };
 
 function ShopItemGrid({ itemList }) {
+  let navigate = useNavigate();
+
   const onClickItemCard = (e) => {
-    console.log(e.target.id + 'card clicked');
+    // console.log(e.target.id + 'card clicked');
     // Link to specific ProductPage
+    navigate(`/product/${e.target.id}`);
   };
 
   return (

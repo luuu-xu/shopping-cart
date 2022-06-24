@@ -1,28 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ShopPage, ShopCategoryMain } from './components/ShopPage';
 import HomePage from './components/HomePage';
-import PRODUCTS from './data/PRODUCTS';
+import ProductPage from './components/ProductPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // <React.StrictMode>
-  //   <App />
-  // </React.StrictMode>
-  <BrowserRouter>
-    <Routes>
-      <Route path='/' element={<App />}>
-        <Route index element={<HomePage />}/>
-        <Route path='shop' element={<ShopPage products={PRODUCTS} />}>
-          <Route path=':category' element={<ShopCategoryMain products={PRODUCTS} />} />
+  <React.StrictMode>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<App />}>
+          <Route index element={<HomePage />}/>
+          <Route path='shop' element={<ShopPage />}>
+            <Route index element={<ShopCategoryMain category="Shop All" />} />
+            <Route path=':category' element={<ShopCategoryMain />} />
+          </Route>
+          <Route path='product' element={<ProductPage />}>
+            <Route path=':productId' element={<ProductPage />} />
+          </Route>
+          {/* <Route path='cart' element={} /> */}
         </Route>
-      </Route>
-    </Routes>
-  </BrowserRouter>
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>
 );  
