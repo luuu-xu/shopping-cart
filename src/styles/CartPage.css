@@ -32,6 +32,7 @@
 
 .cart-item-image {
   width: 100%;
+  cursor: pointer;
 }
 
 .cart-item-main {
@@ -43,13 +44,13 @@
 .cart-item-header {
   display: flex;
   flex-direction: row;
-  /* gap: 200px; */
   justify-content: space-between;
 }
 
 .cart-item-name {
   margin: 0;
   font-size: 1.1rem;
+  cursor: pointer;
 }
 
 .cart-item-subtotal {
@@ -60,12 +61,12 @@
 .cart-item-price {
   margin: 0;
   font-size: 1rem;
+  cursor: pointer;
 }
 
 .quantity-main {
   display: flex;
   flex-direction: row;
-  /* gap: 200px; */
   justify-content: space-between;
 }
 
@@ -127,7 +128,6 @@
   width: 60%;
   font-family: inherit;
   font-size: 1rem;
-  /* font-weight: bold; */
   background-color: white;
   border: 1px solid black;
   color: black;

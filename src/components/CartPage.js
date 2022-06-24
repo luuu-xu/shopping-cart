@@ -1,4 +1,4 @@
-import { useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import "../styles/CartPage.css";
 
 function CartPage() {
@@ -37,23 +37,30 @@ function CartItemList({ cartItems }) {
 };
 
 function CartItemCard({ item }) {
+  let navigate = useNavigate();
+
+  const onClickItemCard = () => {
+    navigate(`/product/${item.id}`);
+  };
+
   return (
     <div className="cart-item-card">
       <img
         className="cart-item-image"
         src={item.url}
         alt={item.name}
+        onClick={onClickItemCard}
       />
-      <CartItemMain item={item} />
+      <CartItemMain item={item} onClickItemCard={onClickItemCard} />
     </div>
   );
 };
 
-function CartItemMain({ item }) {
+function CartItemMain({ item, onClickItemCard }) {
   return (
     <div className="cart-item-main">
-      <CartItemHeader item={item} />
-      <p className="cart-item-price">
+      <CartItemHeader item={item} onClick={onClickItemCard} />
+      <p className="cart-item-price" onClick={onClickItemCard}>
         {item.price}
       </p>
       <QuantityMain item={item} />
