@@ -1,4 +1,4 @@
-Live: https://myusername.github.io/my-app
+Live: https://luuu-xu.github.io/shopping-cart
 
 # Getting Started with Create React App
 
