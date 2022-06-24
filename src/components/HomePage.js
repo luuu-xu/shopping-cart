@@ -1,20 +1,21 @@
 import "../styles/HomePage.css";
 import HomeBannerImage from "../data/images/banner.jpeg";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 function HomePage() {
   return (
     <div className="home-page">
-      <HomeBanner image={HomeBannerImage} />
+      <HomeBanner homeBannerImage={HomeBannerImage} />
       <HomeShopButton />
     </div>
   );
 };
 
-function HomeBanner({ image }) {
+function HomeBanner({ homeBannerImage }) {
   return (
     <img 
-      src={image}
+      src={homeBannerImage}
       alt="some beautiful leathers"
       className="home-banner-image" 
     />
@@ -23,13 +24,14 @@ function HomeBanner({ image }) {
 
 function HomeShopButton() {
   return (
-    // <button className="home-shop-button">
-    //   Shop Now
-    // </button>
     <Link to='shop' className="home-shop-button">
       Shop Now
     </Link>
   );
+};
+
+HomeBanner.propTypes = {
+  homeBannerImage: PropTypes.string.isRequired
 };
 
 export default HomePage;

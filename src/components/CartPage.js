@@ -1,5 +1,6 @@
 import { useNavigate, useOutletContext } from "react-router-dom";
 import "../styles/CartPage.css";
+import PropTypes from "prop-types";
 
 function CartPage() {
   return (
@@ -82,8 +83,8 @@ function CartItemHeader({ item }) {
         ${item.number * priceNumber(item.price)}
       </p>
     </div>
-  )
-}
+  );
+};
 
 function QuantityMain({ item }) {
   const [cartItems, setCartItems] = useOutletContext();
@@ -174,8 +175,8 @@ function QuantityMain({ item }) {
         ×
       </button>
     </div>
-  )
-}
+  );
+};
 
 function QuantityControl({ item, onChange, onClickMinus, onClickPlus }) {
   const minusButtonDisabledClassNames = 
@@ -233,7 +234,51 @@ function SubtotalMain({ cartItems }) {
         Checkout
       </button>
     </div>
+  );
+};
+
+CartItemList.propTypes = {
+  cartItems: PropTypes.arrayOf(
+    PropTypes.shape(
+      {
+        number: PropTypes.number.isRequired
+      }
+    )
   )
-}
+};
+
+CartItemCard.propTypes = {
+  item: PropTypes.object.isRequired
+};
+
+CartItemMain.propTypes = {
+  item: PropTypes.object.isRequired,
+  onClickItemCard: PropTypes.func.isRequired
+};
+
+CartItemHeader.propTypes = {
+  item: PropTypes.object.isRequired
+};
+
+QuantityMain.propTypes = {
+  item: PropTypes.object.isRequired
+};
+
+QuantityControl.propTypes = {
+  item: PropTypes.object.isRequired, 
+  onChange: PropTypes.func.isRequired, 
+  onClickMinus: PropTypes.func.isRequired,
+  onClickPlus: PropTypes.func.isRequired
+};
+
+SubtotalMain.propTypes = {
+  cartItems: PropTypes.arrayOf(
+    PropTypes.shape(
+      {
+        number: PropTypes.number.isRequired
+      }
+    )
+  )
+};
 
 export default CartPage;

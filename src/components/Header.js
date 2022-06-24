@@ -1,6 +1,7 @@
 import "../styles/Header.css";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../data/images/logo.jpeg";
+import PropTypes from "prop-types";
 
 function Header({ cartItems }) {
   const cartTotalNumber = cartItems.reduce((previous, current) => {
@@ -38,6 +39,18 @@ function NavBar({ cartTotalNumber }) {
       <Link to="cart">Cart({cartTotalNumber})</Link>
     </nav>
   );
+};
+
+Header.propTypes = {
+  cartItems: PropTypes.arrayOf(PropTypes.object).isRequired
+};
+
+HeaderShow.propTypes = {
+  logo: PropTypes.string.isRequired
+}
+
+NavBar.propTypes = {
+  cartTotalNumber: PropTypes.number.isRequired
 };
 
 export default Header;

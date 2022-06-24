@@ -12,6 +12,6 @@ function App() {
       <Outlet context={[cartItems, setCartItems]} />
     </div>
   );
-}
+};
 
 export default App;

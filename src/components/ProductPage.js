@@ -2,6 +2,7 @@ import { Link, useOutletContext, useParams } from "react-router-dom";
 import "../styles/ProductPage.css";
 import PRODUCTS from "../data/PRODUCTS";
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 function ProductPage() {
   let params = useParams();
@@ -154,6 +155,33 @@ function QuantityControl({ number, onChange, onClickMinus, onClickPlus }) {
       </button>
     </div>
   );
+};
+
+ProductHeaderNav.propTypes = {
+  product: PropTypes.object.isRequired
+};
+
+ProductMain.propTypes = {
+  product: PropTypes.object.isRequired
+};
+
+ProductImage.propTypes = {
+  product: PropTypes.object.isRequired
+};
+
+ProductShow.propTypes = {
+  product: PropTypes.object.isRequired
+};
+
+AddToCartMain.propTypes = {
+  product: PropTypes.object.isRequired
+};
+
+QuantityControl.propTypes = {
+  number: PropTypes.number.isRequired,
+  onChange: PropTypes.func.isRequired,
+  onClickMinus: PropTypes.func.isRequired,
+  onClickPlus: PropTypes.func.isRequired
 };
 
 export default ProductPage;

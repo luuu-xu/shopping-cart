@@ -15,7 +15,7 @@ root.render(
         <Route path='/' element={<App />}>
           <Route index element={<HomePage />}/>
           <Route path='shop' element={<ShopPage />}>
-            <Route index element={<ShopCategoryMain category="Shop All" />} />
+            <Route index element={<ShopCategoryMain />} />
             <Route path=':category' element={<ShopCategoryMain />} />
           </Route>
           <Route path='product' element={<ProductPage />}>

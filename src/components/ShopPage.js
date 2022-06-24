@@ -2,6 +2,7 @@ import "../styles/ShopPage.css";
 import { useState } from "react";
 import { Outlet, useNavigate, useParams } from "react-router-dom";
 import PRODUCTS from '../data/PRODUCTS';
+import PropTypes from "prop-types";
 
 function ShopPage() {
   const getCategoryList = (products) => {
@@ -14,6 +15,7 @@ function ShopPage() {
     return categoryList;
   };
   const categoryList = getCategoryList(PRODUCTS);
+
   const [category, setCategory] = useState("Shop All");
 
   let navigate = useNavigate();
@@ -60,9 +62,9 @@ function ShopCategorySideNav({ categoryList, currentCategory, onChangeCategory }
   );
 };
 
-function ShopCategoryMain({ category }) {
+function ShopCategoryMain({ category = "Shop All" }) {
   let params = useParams();
-  const currentCategory = category || params.category;
+  const currentCategory = params.category || category;
 
   const getItemList = (category, products) => {
     if (category === "Shop All") {
@@ -120,7 +122,30 @@ function ShopItemCard({ item, onClickItemCard }) {
       <p className="shop-item-card-name" id={item.id}>{item.name}</p>
       <p className="shop-item-card-price" id={item.id}>{item.price}</p>
     </div>
-  )
-}
+  );
+};
+
+ShopCategorySideNav.propTypes = {
+  categoryList: PropTypes.arrayOf(PropTypes.string),
+  currentCategory: PropTypes.string.isRequired,
+  onChangeCategory: PropTypes.func.isRequired
+};
+
+ShopCategoryMain.propTypes = {
+  category: PropTypes.string
+};
+
+ShopCategoryHeader.propTypes = {
+  category: PropTypes.string.isRequired
+};
+
+ShopItemGrid.propTypes = {
+  itemList: PropTypes.arrayOf(PropTypes.object).isRequired
+};
+
+ShopItemCard.propTypes = {
+  item: PropTypes.object.isRequired,
+  onClickItemCard: PropTypes.func.isRequired
+};
 
 export { ShopPage, ShopCategoryMain };
