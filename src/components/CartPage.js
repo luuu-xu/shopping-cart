@@ -11,7 +11,7 @@ function CartPage() {
 };
 
 function CartMain() {
-  const [cartItems, setCartItems] = useOutletContext();
+  const [cartItems] = useOutletContext();
 
   return (
     <div className="cart-main">

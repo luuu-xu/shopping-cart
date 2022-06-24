@@ -6,10 +6,6 @@ import { useState } from "react";
 function App() {
   const [cartItems, setCartItems] = useState([]);
 
-  // const cartTotalNumber = cartItems.reduce((previous, current) => {
-  //   return previous + current.number}, 0
-  // );
-
   return (
     <div className="App">
       <Header cartItems={cartItems} />

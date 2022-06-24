@@ -10,7 +10,7 @@ import CartPage from './components/CartPage';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename='/'>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path='/' element={<App />}>
           <Route index element={<HomePage />}/>

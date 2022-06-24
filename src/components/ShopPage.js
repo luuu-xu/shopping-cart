@@ -30,10 +30,6 @@ function ShopPage() {
         currentCategory={category}
         onChangeCategory={onChangeCategory}
       />
-      {/* <ShopCategoryMain
-        category={category}
-        products={products}
-      /> */}
       <Outlet />
     </div>
   );
@@ -58,19 +54,6 @@ function ShopCategorySideNav({ categoryList, currentCategory, onChangeCategory }
               {category}
             </button>
           </li>
-          // <Link
-          //   to={category}
-          //   key={category}
-          //   className=
-          //     {category === currentCategory
-          //     ?
-          //     "shop-category-sidenav-button selected"
-          //     :
-          //     "shop-category-sidenav-button"
-          //     }
-          // >
-          //   {category}
-          // </Link>
         );
       })}
     </nav>
@@ -108,8 +91,6 @@ function ShopItemGrid({ itemList }) {
   let navigate = useNavigate();
 
   const onClickItemCard = (e) => {
-    // console.log(e.target.id + 'card clicked');
-    // Link to specific ProductPage
     navigate(`/product/${e.target.id}`);
   };
 
